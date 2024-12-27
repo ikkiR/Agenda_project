@@ -1,4 +1,0 @@
-Criar um abiente virtual 
-configurar vscode (pasta .vscode)
-Instalar django (PIP install django)
-Criar um projeto Django ( django-admin startproject "Nome do projeto" .)
