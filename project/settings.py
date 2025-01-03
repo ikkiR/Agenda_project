@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
+# flake8: noqa
 """
 
 from pathlib import Path
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-5)u%mx-#q65_%!xgdf%pm)_kbq$2x!c4@f^@8d+5if1^cqb2j@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS:list[str] = []
 
 
 # Application definition
@@ -130,3 +131,9 @@ MEDIA_ROOT =  BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+try:
+    from project.local_settings import *
+except ImportError:
+    ...
