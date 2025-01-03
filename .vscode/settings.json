@@ -1,5 +1,5 @@
 {
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "editor.fontSize": 20,
     "editor.hover.enabled": true,
     "workbench.startupEditor": "none",
@@ -17,7 +17,7 @@
     "terminal.integrated.fontFamily": "",
     "editor.fontLigatures": false,
     "[python]": {
-      "editor.defaultFormatter": "ms-python.autopep8",
+      "editor.defaultFormatter": "ms-python.python",
       "editor.tabSize": 4,
       "editor.insertSpaces": true,
       "editor.formatOnSave": true,
