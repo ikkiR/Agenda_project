@@ -4,29 +4,76 @@ from .import models
 
 
 class ContactForm(forms.ModelForm):
+
+    # 3 - criando um novo campo
+    first_name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'aqui veio do campo'
+            }
+        ),
+        label='Primeiro nome',
+        help_text='Texto de ajuda ao usuário'
+    )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        # 2- fazendo um opdate no campo
+        # self.fields['first_name'].widget.attrs.update({
+        #     'placeholder': 'esta vindo do init'
+        # })
+
     class Meta:
         model = models.Contact
         fields = (
             'first_name', 'last_name', 'phone',
+            'email', 'description', 'category',
             )
+
+        # 1- criando um novo widget no campo fora do model
+        # widgets = {
+        #     'first_name': forms.TextInput(
+        #         attrs={
+        #             'placeholder': 'Escreva aqui'
+        #         }
+        #     )
+        # }
 
     def clean(self):
-        # cleaned_data = self.cleaned_data
+        # está relacionado a todos os campos
+        cleaned_data = self.cleaned_data
+        first_name = cleaned_data.get('first_name')
+        last_name = cleaned_data.get('last_name')
 
-        self.add_error(
-            'first_name',
-            ValidationError(
-                'Mensagem de erro',
+        if first_name == last_name:
+            msg = ValidationError(
+                'O primeiro nome não pode ser igual ao segundo',
                 code='invalid'
             )
-        )
-
-        self.add_error(
-            None,
-            ValidationError(
-                'Mensagem de erro 2',
-                code='invalid'
-            )
-        )
+            self.add_error('first_name', msg)
+            self.add_error('last_name', msg)
 
         return super().clean()
+
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name')
+
+        if first_name == 'ABC':
+            self.add_error(
+                'first_name',
+                ValidationError(
+                    'error',
+                    code='invalid'
+                )
+            )
+        return first_name
+
+        # Forma de mostrar um erro
+        # self.add_error(
+        #     'first_name',
+        #     ValidationError(
+        #         'Mensagem de erro',
+        #         code='invalid'
+        #     )
+        # )
