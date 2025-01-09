@@ -27,22 +27,22 @@
                         </a>
                     </td>
                     <td class="table-cel">
-                        <a class="table-link" href="#"">
+                        <a class="table-link" href="{% url 'contact:contact' contact.id %}">
                             {{contact.first_name}}
                         </a>
                     </td>
                     <td class="table-cel">
-                        <a class="table-link" href="#">
+                        <a class="table-link" href="{% url 'contact:contact' contact.id %}">
                             {{contact.last_name}}
                         </a>
                     </td>
                     <td class="table-cel">
-                        <a class="table-link" href="#">
+                        <a class="table-link" href="{% url 'contact:contact' contact.id %}">
                             {{contact.phone}}
                         </a>
                     </td>
                     <td class="table-cel">
-                        <a class="table-link" href="#">
+                        <a class="table-link" href="{% url 'contact:contact' contact.id %}">
                             {{contact.email}}
                         </a>
                     </td>
