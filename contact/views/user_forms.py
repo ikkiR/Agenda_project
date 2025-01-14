@@ -74,6 +74,7 @@ def user_update(request):
     form = RegisterUpdateForm(data=request.POST,  instance=request.user)
 
     if not form.is_valid():
+        messages.error(request, 'Formulário inválido')
         return render(
             request,
             'contact/user_update.html',
@@ -81,6 +82,8 @@ def user_update(request):
                 'form': form
             }
         )
+    else:
+        messages.success(request, 'Usuário atualizado')
 
     form.save()
 
