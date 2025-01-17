@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'agenda_db',
+        'NAME': 'Agenda_database',
         'USER': 'agenda_user',
         'PASSWORD': 'zKLvGD0NEvhEk6sWM5aXxOgsy0ARPpfB',
         'HOST': 'dpg-cu4p4h52ng1s73fcjjv0-a',
