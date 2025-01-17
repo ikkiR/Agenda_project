@@ -2,7 +2,7 @@
 FROM python:3.11-slim
 
 # Configurar diretório de trabalho
-WORKDIR /app
+WORKDIR /AGENDA_PROJECT
 
 # Copiar o arquivo de dependências e instalá-las
 COPY requirements.txt .
