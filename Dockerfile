@@ -23,4 +23,4 @@ RUN if [ "$DJANGO_ENV" = "production" ]; then python manage.py collectstatic --n
 EXPOSE 8000
 
 # Usar Gunicorn para servir a aplicação
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "project.wsgi:application"]
+CMD ["uvicorn", "project.asgi:application", "--host", "0.0.0.0", "--port", "8000"]
