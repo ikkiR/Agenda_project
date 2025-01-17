@@ -9,7 +9,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copiar o restante do projeto para o contêiner
-COPY . .
+COPY . /AGENDA_PROJECT/
 
 # Configurar as variáveis de ambiente
 ENV PYTHONDONTWRITEBYTECODE 1
