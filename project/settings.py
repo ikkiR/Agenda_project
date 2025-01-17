@@ -141,6 +141,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+CSRF_TRUSTED_ORIGINS = ['https://agenda-project-yoxx.onrender.com']
+
 try:
     from project.local_settings import *
 except ImportError:
