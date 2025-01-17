@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-5)u%mx-#q65_%!xgdf%pm)_kbq$2x!c4@f^@8d+5if1^cqb2j@'
+SECRET_KEY = 'django-insecure-5)u%mx-#q65_%!xgdf%pm)_kbq$2x!c4@f^@8d+5if1^cqb2j@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = False
 
-# ALLOWED_HOSTS:list[str] = []
+ALLOWED_HOSTS = ['agenda.onrender.com']
 
 
 # Application definition
@@ -77,12 +77,16 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'agenda_db',
+        'USER': 'agenda_user',
+        'PASSWORD': 'zKLvGD0NEvhEk6sWM5aXxOgsy0ARPpfB',
+        'HOST': 'dpg-cu4p4h52ng1s73fcjjv0-a',
+        'PORT': '5432',
+    }
+}
 
 
 
