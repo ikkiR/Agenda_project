@@ -17,7 +17,7 @@ ENV PYTHONUNBUFFERED 1
 ENV DJANGO_ENV=production 
 
 # Rodar collectstatic apenas se o ambiente for produção
-RUN if [ "$DJANGO_ENV" = "production" ]; then python manage.py collectstatic --noinput; fi
+RUN python manage.py collectstatic --noinput
 
 # Expor a porta padrão do Django
 EXPOSE 8000
