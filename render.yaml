@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: Agenda
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    region: us-east
+
+databases:
+  - name: Agenda_database
+    plan: free
+    region: us-east
