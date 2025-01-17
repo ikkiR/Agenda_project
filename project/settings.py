@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': 'agenda_database_4ut8', 
         'USER': 'agenda_user',
         'PASSWORD': 'zKLvGD0NEvhEk6sWM5aXxOgsy0ARPpfB',
-        'HOST': 'dpg-cu4p4h52ng1s73fcjjv0-a.virginia-postgres.render.com',
+        'HOST': 'dpg-cu4p4h52ng1s73fcjjv0-a',
         'PORT': '5432',  
     }
 }
