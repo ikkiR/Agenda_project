@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -82,14 +83,13 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Agenda_database',
+        'NAME': 'agenda_database_4ut8', 
         'USER': 'agenda_user',
         'PASSWORD': 'zKLvGD0NEvhEk6sWM5aXxOgsy0ARPpfB',
-        'HOST': 'dpg-cu4p4h52ng1s73fcjjv0-a',
-        'PORT': '5432',
+        'HOST': 'dpg-cu4p4h52ng1s73fcjjv0-a.virginia-postgres.render.com',
+        'PORT': '5432',  
     }
 }
-
 
 
 # Password validation
